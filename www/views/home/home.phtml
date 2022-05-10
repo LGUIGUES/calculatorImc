@@ -1,0 +1,42 @@
+<div class="px-4 py-5 my-5 text-center">
+  <img class="d-block w-25 mx-auto mb-4" src="www/assets/img/picture_imc.jpg" alt="Illustration IMC">
+  <h2 class="display-5 fw-bold">Calculez votre IMC</h2>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Avec cette calculatrice, vous allez pouvoir connaître votre Indice de Masse Corporel et pouvoir vous situer par rapport aux seuils déterminés d'un point de vue médical.</p>
+    <form action="index.php" method="post">
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingInput" name="size" placeholder="Taille en cm" min="1" step="1">
+        <label for="floatingInput">Entrez Votre taille en cm</label>
+      </div>
+      <div class="form-floating">
+        <input type="number" class="form-control" id="floatingPassword" name="weight" placeholder="Poids en Kg" min="1" step="0.01">
+        <label for="floatingPassword">Entrez votre poids en Kg</label>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary mt-3" name="submit" type="submit">Calculer votre IMC</button>
+      </div>
+      <p class="text-muted mt-2">
+        Nous ne conservons aucunes données. Elles servent uniquement pour le calcul.
+      </p>
+    </form>
+  </div>
+  <?php if (!empty($resultImc)) : ?>
+    <div class=" col-lg-6 mx-auto border p-2 mt-3">
+      <p>Les informations que vous nous avez communiqués :</p>
+      <p>Vous avez une taille de : <?= htmlspecialchars($_POST['size']) ?> cm pour un poids de <?= htmlspecialchars($_POST['weight']) ?> Kg</p>
+      <strong>Voici votre résultat</strong>
+      <div class="col-lg-6 mx-auto">
+        <div class="bg-primary text-white p-2 mt-2 mb-2">
+          Votre IMC est de <span class="fw-bold"><?= number_format(htmlspecialchars($resultImc),2) ?></span>
+        </div>
+      </div>
+      <strong>Votre corpulence est</strong>
+      <div class="col-lg-6 mx-auto">
+        <div class="bg-primary text-white p-2 mt-2 mb-2">
+          <span class="fw-bold"><?= $corpulence ?></span>
+        </div>
+        <p><?= $textCorpulence ?></p>
+      </div>
+    </div>
+  <?php endif; ?>  
+</div>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="www/assets/css/style.css">
+    <title>Calcultrice IMC</title>
+</head>
+
+<body>
+    <header>
+        <div class="px-3 py-2 bg-dark text-white">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <a href="index.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <strong class="logo text-uppercase fw-bold">Imc - Calculator</strong>
+                    </a>
+
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="index.php" class="nav-link text-secondary">
+                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                    <use xlink:href="#home"></use>
+                                </svg>
+                                Accueil
+                            </a>
+                        </li>                        
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </header>
+    <main class="containt">
+        <!-- Start Dynamic Part -->
+        <?php require $template . ".phtml" ?>
+        <!-- End Dynamic Part -->
+    </main>
+    <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Accueil</a></li>            
+        </ul>
+        <p class="text-center text-muted">© Laurent GUIGUES <?= date('Y') ?></p>
+    </footer>
+</body>
+
+</html>
